@@ -1,0 +1,1 @@
+update user_table set is_married = 0;
