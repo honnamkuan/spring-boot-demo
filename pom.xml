@@ -98,7 +98,6 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-            <version>4.0.3</version>
         </dependency>
     </dependencies>
 
@@ -121,8 +120,23 @@
             </plugin>
         </plugins>
         <finalName>springbootdemo</finalName>
-
     </build>
 
-
+    <profiles>
+        <profile>
+            <id>development</id>
+            <properties>
+                <logging.file.path>target/logs</logging.file.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>production</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <logging.file.path>&#36;{catalina.base:}/logs</logging.file.path>
+            </properties>
+        </profile>
+    </profiles>
 </project>
