@@ -3,6 +3,7 @@ package com.springbootdemo.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -14,12 +15,15 @@ public class User
     private Integer id;
 
     @Column(name = "full_name")
+    @NotNull
     private String name;
 
     @Column(name = "address")
+    @NotNull
     private String address;
 
     @Column(name = "age")
+    @NotNull
     private Integer age;
 
     @Column(nullable = true)

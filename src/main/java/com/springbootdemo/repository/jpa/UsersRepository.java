@@ -1,4 +1,4 @@
-package com.springbootdemo.repository;
+package com.springbootdemo.repository.jpa;
 
 import com.springbootdemo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>
+public interface UsersRepository extends JpaRepository<User, Integer>
 {
     User findById(@Param("id") Integer pId);
 
